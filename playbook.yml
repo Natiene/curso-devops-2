@@ -1,0 +1,47 @@
+---
+- name: Testando o ansible
+  hosts: prod
+  tasks:
+  - name: instalando o pacote sl
+    apt: name=sl state=present update_cache=yes
+
+  - name: instalando o pacote cowsay
+    apt:
+      name: cowsay
+      state: present
+      update_cache: yes
+
+  - name: garantindo usr games na path
+    lineinfile:
+      path: /etc/profile
+      line: "export PATH=$PATH:/usr/games"
+      state: absent
+
+  - name: garantindo hosts
+    lineinfile:
+     path: /etc/hosts
+     create: yes
+     line: "{{ item }}"
+    with_items:
+    - "192.168.200.142 ubuntu1.salas4linux.com.br ubuntu1"
+    - "192.168.200.164 ubuntu2.salas4linux.com.br ubuntu2"
+    - "192.168.200.161 dev1.salas4linux.com.br dev1"
+    - "192.168.200.179 dev2.salas4linux.com.br dev2"
+ 
+  - name: garantindo bashrc
+    copy:
+      src: files/bashrc
+      dest: /root/.bashrc
+
+  - name: instalando  nginx
+    apt:
+      name: nginx
+      state: present
+    notify: restart nginx
+
+  handlers:
+  - name: restart nginx
+    service:
+      name: nginx
+      state: restarted
+

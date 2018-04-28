@@ -1,0 +1,9 @@
+---
+# tasks file for puppet
+- name: role de instalacao do puppet
+  hosts: all
+  tasks:
+    - include: install_puppet.yml
+      when: ansible_distribution == "Ubuntu"
+    - include: install_puppet_centos.yml
+      when: ansible_distribution == "CentOS"

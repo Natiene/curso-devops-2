@@ -1,0 +1,7 @@
+- name: habilitando repositorio
+  apt:
+   deb: https://apt.puppetlabs.com/puppet5-release-xenial.deb
+
+- name: intalando puppet agent
+  apt: name=puppet-agent state=present update_cache=yes
+  

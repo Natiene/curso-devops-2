@@ -1,0 +1,8 @@
+- name: baixando a imagem
+  yum:
+    name: https://yum.puppet.com/puppet5/puppet5-release-el-7.noarch.rpm
+ 
+
+- name: instalando puppet agent
+  yum: name=puppet-agent state=present
+
