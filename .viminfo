@@ -11,10 +11,10 @@
 $
 
 # Command Line History (newest to oldest):
+:wq
+:q!
 :q
 :w
-:q!
-:wq
 
 # Search String History (newest to oldest):
 ? @$
@@ -26,29 +26,84 @@ $
 # Input Line History (newest to oldest):
 
 # Registers:
-""0	CHAR	0
+"0	CHAR	0
 	:
+""1	LINE	0
+	  file{'/root/.bashrc':
+	    source => "puppet:///modules/base/bashrc_base",
+	    ensure => present
+	  }
+"2	LINE	0
+	}
+"3	LINE	0
+	 }
+"4	LINE	0
+	
+	node /(ubuntu2|dev2).salas4linux.com.br/ {
+	 package{"fish":,
+	  ensure=>present
+	 }
+	 user{"devops":
+	  ensure=>present,
+	  managehome=>true,
+	  shell=>'/usr/bin/fish'
+"5	LINE	0
+	      exec{'atualizar_pacotes':
+	       command => '/usr/bin/apt update'
+	      }
 "-	CHAR	0
-	:
+	c
 
 # File marks:
-'0  7  0  /etc/puppetlabs/code/environments/homolog/manifests/site.pp
-'1  9  12  /etc/puppetlabs/code/environments/production/manifests/site.pp
-'2  8  7  /etc/puppetlabs/code/environments/production/manifests/site.pp
-'3  8  0  /etc/puppetlabs/code
-'4  6  51  ~/roles/puppet/tasks/install_puppet.yml
-'5  3  0  ~/roles/puppet/tasks/install_puppet.yml
-'6  1  0  ~/roles/puppet/tasks/install_puppet_centos.yml
-'7  2  0  ~/roles/puppet/tasks/install_puppet.yml
-'8  9  43  ~/roles/puppet/tasks/main.yml
-'9  6  30  ~/roles/puppet/tasks/install_puppet_centos.yml
+'0  2  26  ~/aula_git/app.py
+'1  1  23  ~/aula_git/app.py
+'2  5  2  ~/aula_git/app.py
+'3  9  2  ~/aula_git/app.py
+'4  6  8  ~/aula_git/README.md
+'5  12  2  /etc/puppetlabs/code/environments/production/modules/docker/manifests/init.pp
+'6  2  15  /etc/puppetlabs/code/environments/production/manifests/site.pp
+'7  3  0  /etc/puppetlabs/code/environments/production/modules/docker/manifests/site.pp
+'8  25  0  /etc/puppetlabs/code/environments/production/modules/docker/manifests/init.pp
+'9  1  0  /etc/puppetlabs/code/environments/production/modules/docker/manifests/site.pp
 
 # Jumplist (newest first):
+-'  2  26  ~/aula_git/app.py
+-'  1  0  ~/aula_git/app.py
+-'  5  2  ~/aula_git/app.py
+-'  9  2  ~/aula_git/app.py
+-'  6  8  ~/aula_git/README.md
+-'  1  0  ~/aula_git/README.md
+-'  12  2  /etc/puppetlabs/code/environments/production/modules/docker/manifests/init.pp
+-'  1  0  /etc/puppetlabs/code/environments/production/modules/docker/manifests/init.pp
+-'  2  15  /etc/puppetlabs/code/environments/production/manifests/site.pp
+-'  1  0  /etc/puppetlabs/code/environments/production/manifests/site.pp
+-'  3  0  /etc/puppetlabs/code/environments/production/modules/docker/manifests/site.pp
+-'  1  0  /etc/puppetlabs/code/environments/production/modules/docker/manifests/site.pp
+-'  25  0  /etc/puppetlabs/code/environments/production/modules/docker/manifests/init.pp
+-'  13  28  /etc/puppetlabs/code/environments/production/modules/docker/manifests/init.pp
+-'  4  13  /etc/puppetlabs/code/environments/production/modules/docker/manifests/site.pp
+-'  32  28  /etc/puppetlabs/code/environments/production/modules/docker/manifests/init.pp
+-'  13  2  /etc/puppetlabs/code/environments/production/modules/base/manifests/init.pp
+-'  1  0  /etc/puppetlabs/code/environments/production/modules/base/manifests/init.pp
+-'  18  7  /etc/puppetlabs/code/environments/production/modules/base/manifests/init.pp
+-'  16  21  /etc/puppetlabs/code/environments/production/modules/base/manifests/init.pp
+-'  22  0  /etc/puppetlabs/code/environments/production/modules/base/manifests/init.pp
+-'  1  0  /etc/puppetlabs/puppet/puppet.conf
+-'  1  1  /etc/puppetlabs/autosign.conf
+-'  13  39  /etc/puppetlabs/puppet/puppet.conf
+-'  20  20  /etc/puppetlabs/code/environments/production/modules/base/manifests/init.pp
+-'  15  0  /etc/puppetlabs/code/environments/production/modules/base/files/bashrc_base
+-'  1  0  /etc/puppetlabs/code/environments/production/modules/base/files/bashrc_base
+-'  1  0  /etc/puppetlabs/code/environments/production/init.pp
+-'  17  1  /etc/puppetlabs/code/environments/production/modules/base/manifests/init.pp
+-'  6  36  /etc/puppetlabs/code/environments/production/manifests/site.pp
+-'  7  0  /etc/puppetlabs/code/environments/production/manifests/site.pp
+-'  4  0  /etc/puppetlabs/code/environments/production/manifests/site.pp
+-'  8  0  /etc/puppetlabs/code/environments/production/manifests
 -'  7  0  /etc/puppetlabs/code/environments/homolog/manifests/site.pp
 -'  1  0  /etc/puppetlabs/code/environments/homolog/manifests/site.pp
--'  9  12  /etc/puppetlabs/code/environments/production/manifests/site.pp
--'  1  0  /etc/puppetlabs/code/environments/production/manifests/site.pp
--'  8  7  /etc/puppetlabs/code/environments/production/manifests/site.pp
+-'  14  12  /etc/puppetlabs/code/environments/production/manifests/site.pp
+-'  13  7  /etc/puppetlabs/code/environments/production/manifests/site.pp
 -'  8  0  /etc/puppetlabs/code
 -'  1  0  /etc/puppetlabs/code
 -'  6  51  ~/roles/puppet/tasks/install_puppet.yml
@@ -110,41 +165,183 @@ $
 -'  45  16  ~/playbook.yml
 -'  40  0  ~/playbook.yml
 -'  47  0  ~/playbook.yml
--'  18  18  ~/playbook.yml
--'  34  24  ~/playbook.yml
--'  101  30  ~/.bashrc
--'  1  0  ~/.bashrc
--'  25  8  ~/playbook.yml
--'  21  9  ~/playbook.yml
--'  24  21  ~/playbook.yml
--'  28  44  ~/playbook.yml
--'  15  2  ~/playbook.yml
--'  19  0  ~/playbook.yml
--'  6  23  ~/playbook.yml
--'  11  19  ~/playbook.yml
--'  9  10  ~/playbook.yml
--'  46  78  ~/playbook.yml
--'  7  19  ~/hosts
--'  2  14  ~/hosts
--'  1  5  ~/hosts
--'  7  39  ~/roles/apache/tasks/install_apache.yml
--'  1  0  ~/roles/apache/tasks/install_apache.yml
--'  12  75  ~/roles/apache/tasks/prerequisitos.yml
--'  9  17  ~/desafio.yml
--'  1  0  ~/desafio.yml
--'  10  0  ~/desafio.yml
--'  33  2  ~/desafio.yml
--'  67  25  ~/desafio.yml
--'  46  3  ~/desafio.yml
--'  42  2  ~/desafio.yml
--'  41  1  ~/desafio.yml
--'  56  2  ~/desafio.yml
--'  23  10  ~/desafio.yml
--'  8  17  ~/desafio.yml
--'  14  17  ~/desafio.yml
--'  6  2  ~/desafio.yml
 
 # History of marks within files (newest to oldest):
+
+> ~/aula_git/app.py
+	"	2	26
+	^	2	27
+	.	2	27
+	+	9	2
+	+	5	2
+	+	1	24
+	+	5	0
+	+	3	0
+	+	2	27
+
+> ~/aula_git/README.md
+	"	6	8
+	^	6	9
+	.	3	12
+	+	7	8
+	+	3	12
+
+> /etc/puppetlabs/code/environments/production/modules/docker/manifests/init.pp
+	"	12	2
+	^	12	3
+	.	10	3
+	+	32	85
+	+	1	11
+	+	32	28
+	+	32	0
+	+	32	1
+	+	1	11
+	+	1	11
+	+	3	60
+	+	13	28
+	+	3	130
+	+	3	130
+	+	3	132
+	+	13	95
+	+	3	145
+	+	12	0
+	+	15	18
+	+	16	5
+	+	16	102
+	+	16	84
+	+	19	125
+	+	19	39
+	+	19	45
+	+	19	45
+	+	19	105
+	+	19	124
+	+	20	2
+	+	17	3
+	+	15	17
+	+	17	4
+	+	18	4
+	+	17	3
+	+	20	2
+	+	21	1
+	+	13	0
+	+	13	110
+	+	21	0
+	+	25	0
+	+	23	7
+	+	21	5
+	+	22	5
+	+	23	4
+	+	25	2
+	+	26	0
+	+	25	1
+	+	32	0
+	+	19	131
+	+	13	95
+	+	14	0
+	+	11	73
+	+	4	3
+	+	5	47
+	+	5	82
+	+	11	73
+	+	7	29
+	+	11	71
+	+	11	65
+	+	11	4
+	+	7	10
+	+	10	4
+	+	8	14
+	+	7	22
+	+	8	116
+	+	8	46
+	+	8	57
+	+	8	113
+	+	12	0
+	+	11	0
+	+	9	4
+	+	10	3
+
+> /etc/puppetlabs/code/environments/production/manifests/site.pp
+	"	2	15
+	^	2	16
+	.	2	15
+	+	15	3
+	+	16	0
+	+	12	16
+	+	13	7
+	+	10	2
+	+	14	24
+	+	12	18
+	+	14	12
+	+	5	0
+	+	4	0
+	+	1	8
+	+	6	39
+	+	2	0
+	+	6	36
+	+	2	15
+
+> /etc/puppetlabs/code/environments/production/modules/docker/manifests/site.pp
+	"	3	0
+	.	4	0
+	+	4	0
+	+	2	15
+	+	4	0
+
+> /etc/puppetlabs/code/environments/production/modules/base/manifests/init.pp
+	"	13	2
+	^	13	3
+	.	10	4
+	+	21	0
+	+	17	0
+	+	5	71
+	+	16	21
+	+	17	1
+	+	17	3
+	+	19	51
+	+	20	20
+	+	5	28
+	+	21	1
+	+	22	0
+	+	23	0
+	+	21	2
+	+	18	2
+	+	17	0
+	+	18	8
+	+	4	11
+	+	7	13
+	+	11	5
+	+	5	4
+	+	11	17
+	+	14	0
+	+	12	3
+	+	13	1
+	+	6	3
+	+	4	12
+	+	7	14
+	+	10	4
+
+> /etc/puppetlabs/puppet/puppet.conf
+	"	1	0
+	^	13	40
+	.	13	39
+	+	13	39
+
+> /etc/puppetlabs/autosign.conf
+	"	1	1
+	^	1	2
+	.	1	1
+	+	1	1
+
+> /etc/puppetlabs/code/environments/production/modules/base/files/bashrc_base
+	"	15	0
+	^	15	0
+	.	15	0
+	+	15	0
+	+	1	4
+	+	15	0
+
+> /etc/puppetlabs/code/environments/production/init.pp
+	"	1	0
 
 > /etc/puppetlabs/code/environments/homolog/manifests/site.pp
 	"	7	0
@@ -154,19 +351,6 @@ $
 	+	2	13
 	+	6	3
 	+	7	0
-
-> /etc/puppetlabs/code/environments/production/manifests/site.pp
-	"	9	12
-	^	9	13
-	.	9	12
-	+	10	3
-	+	11	0
-	+	7	16
-	+	8	7
-	+	5	2
-	+	9	24
-	+	7	18
-	+	9	12
 
 > ~/roles/puppet/tasks/install_puppet.yml
 	"	6	51

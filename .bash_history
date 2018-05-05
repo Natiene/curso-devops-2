@@ -152,3 +152,33 @@ puppet resource service puppetserver ensure=running enable=yes
 puppet --version
 logout
 exit
+puppet --version
+puppet resource service puppetserver ensure=running enable=yes
+puppet resource service puppetserver ensure=running enable=true
+ss -ntpl
+puppet cert list --all
+puppet cert list
+puppet cert sign dev1.salas4linux.com.br
+vim /etc/puppetlabs/code
+vim /etc/puppetlabs/code/environments/production/manifests/site.pp
+ls
+vim /etc/puppetlabs/code/environments/production/manifests/site.pp 
+mkadir /etc/puppetlabs/code/environments/homolog
+mkdir /etc/puppetlabs/code/environments/homolog
+mkdir /etc/puppetlabs/code/environments/develop
+mkdir /etc/puppetlabs/code/environments/homolog/manifests
+cd /etc/puppetlabs/code/environments/homolog/manifests
+vim site.pp
+cd 
+git status
+ls
+ls al
+ls -al
+git init
+git status
+git add .
+git status
+git commit -m "final aula 2"
+git remote add origin https://github.com/Natiene/curso-devops-2.git
+git push -u origin master
+exit
